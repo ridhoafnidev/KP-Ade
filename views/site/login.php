@@ -43,31 +43,20 @@ $this->params['breadcrumbs'][] = $this->title;
                     'labelOptions' => ['class' => 'col-lg-1 control-label'],
                 ],
             ]); ?>
-            <div class="card-body">
-                <form>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
-                        </div>
-                        <?= $form->field($model, 'username', [
-                            'inputTemplate' => '<div class="input-group-prepend">{input}<span class="input-group-text"><i class="fas fa-user"></i></span></div>'])->textInput(['autofocus' => true,'class'=>'form-control','placeholder'=>'Username'])->label(false) 
-                        ?>
-                
-
-                        <!-- <input type="text" class="form-control" placeholder="username"> -->
+                    <div class="card-body">
+                        <form>
+                        <div class="form-group">
                         
-                    </div>
-                    <div class="input-group form-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
-                        </div>
-                        <input type="password" class="form-control" placeholder="password">
-                    </div>
-                    <div class="row align-items-center remember">
-                        <input type="checkbox">Remember Me
+                        <?= $form->field($model, 'username', [
+                            'inputTemplate' => '<div class="form-stack has-icon pull-left">{input}<i class="ico-user2 form-control-icon"></i></div>'
+                        ])->textInput(['autofocus' => true,'class'=>'form-control text-input','placeholder'=>'Username', 'style'=>'width:550%'])->label(false) ?>
+                        
+                        <?= $form->field($model, 'password', [
+                            'inputTemplate' => '<div class="form-stack has-icon pull-left">{input}<i class="ico-lock2 form-control-icon"></i></div>'
+                        ])->passwordInput(['class'=>'form-control text-input','placeholder'=>'Password', 'style'=>'width:550%'])->label(false) ?>
                     </div>
                     <div class="form-group">
-                            <?= Html::submitButton('Login', ['class' => 'btn float-right login_btn', 'name' => 'login-button']) ?>
+                            <?= Html::submitButton('Login', ['class' => 'btn float-right login_btn', 'name' => 'login-button', 'style'=>'margin-right: 4%']) ?>
                     </div>
                 </form>
             </div>
